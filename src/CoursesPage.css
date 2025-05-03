@@ -1,0 +1,114 @@
+.courses-page-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.courses-page-container h1 {
+    font-size: 2.5rem;
+    color: #3f51b5;
+    margin-bottom: 2rem;
+}
+
+.courses-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.courses-page-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courses-page-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.courses-page-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.courses-page-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.courses-page-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.courses-page-button {
+    background: #4a6bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.courses-page-button:hover {
+    background: #3a5edb;
+}
+
+/* Hero Section */
+.courses-hero {
+    background-image: url("/Images/CoursePageHero-Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .courses-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+    z-index: 1;
+  }
+  
+  .courses-hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .courses-hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 0.5rem;
+  }
+  
+  .courses-hero h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .courses-hero p {
+    font-size: 1.2rem;
+    color: #ddd;
+  }

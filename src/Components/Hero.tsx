@@ -1,0 +1,24 @@
+const Hero = () => {
+  return (
+    <section className="hero">
+      <div className="hero-container">
+        <div className="hero-content">
+          <h2 className="logo">Flippy</h2>
+          <h1>
+            Belajar Jadi <span className="highlight">Seru</span>, <br />
+            Sekali <span className="highlight">Flip</span> Langsung Paham
+          </h1>
+          <button className="hero-button">Mulai</button>
+        </div>
+      </div>
+      {/* Gambar di kanan bawah */}
+      <img
+        src="/Images/CreateFlashCard-Hovering.jpg"
+        alt="Create Flash Card"
+        className="floating-image"
+      />
+    </section>
+  );
+};
+
+export default Hero;
