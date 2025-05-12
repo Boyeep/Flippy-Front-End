@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom"; // Tambahkan useLocation
 import "./CoursesPage.css";
+import "./App.css";
 
 const CoursesPage: React.FC = () => {
   const courses = [
@@ -10,13 +12,25 @@ const CoursesPage: React.FC = () => {
     { title: "Art", description: "15 courses+", image: "/Images/PopularCourses-MathSymbol.jpg" },
   ];
 
+  const location = useLocation(); // Gunakan useLocation untuk mendeteksi perubahan rute
+
+  // Scroll ke atas saat halaman dimuat atau tombol "Courses" ditekan
+  useEffect(() => {
+    if (location.pathname === "/courses" && window.scrollY > 0) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <div className="courses-page-container">
       {/* Hero Section */}
       <section className="courses-hero">
         <div className="courses-hero-content">
           <h1>Course</h1>
-          <h2>Tingkatkan kemampuan dan pemahaman mu, dari sini!</h2>
+          <h2>
+            Tingkatkan <span className="highlight">kemampuan</span> dan <br />
+            <span className="highlight">pemahaman</span> mu, dari sini!
+          </h2>
           <p>Pilih kartu, pikirkan, dan berikan jawaban!</p>
         </div>
       </section>
@@ -33,6 +47,25 @@ const CoursesPage: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {/* Floating Image */}
+      <img
+        src="/Images/CreateFlashCard-Hovering.jpg"
+        alt="Create Flash Card"
+        className="floating-image"
+        style={{
+          position: "fixed",
+          bottom: "2rem",
+          right: "2rem",
+          width: "70px",
+          height: "auto",
+          zIndex: 1000,
+          cursor: "pointer",
+          transition: "transform 0.3s ease",
+        }}
+        onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+        onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+      />
     </div>
   );
 };

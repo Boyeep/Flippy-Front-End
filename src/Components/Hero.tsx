@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import "./Hero.css";
+
 const Hero = () => {
+  const navigate = useNavigate(); // Hook untuk navigasi
+
+  const handleStartClick = () => {
+    navigate("/courses"); // Navigasi ke halaman CoursesPage
+  };
+
   return (
     <section className="hero">
       <div className="hero-container">
@@ -8,7 +17,9 @@ const Hero = () => {
             Belajar Jadi <span className="highlight">Seru</span>, <br />
             Sekali <span className="highlight">Flip</span> Langsung Paham
           </h1>
-          <button className="hero-button">Mulai</button>
+          <button className="hero-button" onClick={handleStartClick}>
+            Mulai
+          </button>
         </div>
       </div>
       {/* Gambar di kanan bawah */}
