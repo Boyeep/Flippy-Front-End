@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; // Gunakan Link untuk navigasi
 import Hero from "./Components/Hero";
 import AboutUs from "./Components/AboutUs";
 import WhyChooseUs from "./Components/WhyChooseUs";
@@ -11,6 +11,7 @@ import LoginPage from "./LoginPage"; // Halaman Login
 import ForgotPasswordPage from "./ForgotPasswordPage"; // Halaman Forgot Password
 import CreateNewPasswordPage from "./CreateNewPasswordPage"; // Halaman Create New Password
 import Footer from "./Components/Footer";
+import CreateFlashcardPage from "./CreateFlashcardPage";
 import "./App.css";
 import './MobileApp.css';
 
@@ -99,7 +100,15 @@ const App: React.FC = () => {
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           {/* Halaman Create New Password */}
           <Route path="/create-new-password" element={<CreateNewPasswordPage />} />
+          <Route path="/create-flashcard" element={<CreateFlashcardPage />} />
         </Routes>
+        {/* Gambar di kanan bawah */}
+        <Link to="/create-flashcard" className="floating-image">
+          <img
+            src="/Images/CreateFlashCard-Hovering.jpg"
+            alt="Create Flash Card"
+          />
+        </Link>
       </div>
     </Router>
   );
