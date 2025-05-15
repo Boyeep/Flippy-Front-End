@@ -152,12 +152,12 @@ html {
 
 .hero .logo {
   font-size: 1.5rem;
-  color: #ff9800; /* Warna oranye */
+  color: #ff9800;
   font-weight: bold;
 }
 
 .hero .highlight {
-  color: #ff9800; /* Warna oranye */
+  color: #ff9800;
   font-style: italic;
 }
 
@@ -183,6 +183,7 @@ html {
 
 .hero-button:hover {
   background: #2c3a8b;
+  transform: translateY(-2px); /* Tombol naik sedikit saat hover */
 }
 
 .hero-button:active {
@@ -193,19 +194,20 @@ html {
 /* Popular Courses Section */
 .popular-courses {
   padding: 4rem 5%;
-  height: 75vh;
+  height: 70vh;
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 9rem;
+  
 }
 
 .popular-courses h2 {
   font-size: 2rem;
-  color: #3f51b5; /* Warna biru tua */
+  color: #3f51b5;
   margin-bottom: 1rem;
 }
 
 .popular-courses .highlight-text {
-  color: #ff9800; /* Warna oranye */
+  color: #ff9800;
 }
 
 .popular-courses-subtitle {
@@ -711,12 +713,11 @@ html {
 }
 
 .course-item img {
-  max-width: 250px;
+  max-width: 300px;
   max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
-  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .course-item:hover {
@@ -740,11 +741,13 @@ html {
 .course-button {
   background: #ff9800;
   color: white;
+  font-size: bold;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  box-shadow: 0 4px 0 #c57600;
 }
 .course-button:hover {
   background: #e68a00;
@@ -793,11 +796,26 @@ html {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 70px;
-  height: auto;
-  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
   cursor: pointer;
+  background-color: orange;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.floating-image img {
+  width: 75px;
+  height: 75px;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 .floating-image:hover {
@@ -806,7 +824,7 @@ html {
 
 /* Tombol Sign Up */
 .auth-buttons .signup {
-  position: relative; /* Untuk membuat layer kedua */
+  position: relative;
   background-color: #3f51b5;
   color: white;
   border-radius: 8px;
